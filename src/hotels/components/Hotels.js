@@ -1,38 +1,45 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
-import axios from 'axios'
+import { Link } from 'react-router-dom'
+
 import apiUrl from '../../apiConfig'
-import './Hotels.scss'
 
 class Hotels extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
+
     this.state = {
-      hotels: []
+      hotels: null
     }
   }
 
-  async componentDidMount() {
-    const response = await axios.get(`${apiUrl}/hotels`)
-    this.setState({ hotels: response.data.hotels })
+  componentDidMount() {
+    fetch(`${apiUrl}/hotels`)
+      .then(res => res.ok ? res : new Error())
+      .then(res => res.json())
+      .then(data => this.setState({ hotels: data.hotels }))
+      .catch(console.error)
   }
 
-  render() {
-    const hotels = this.state.hotels.map(hotel => {
-      return (
-        <div key={example.id}>
-          <Link to={`/hotels/${hotel.id}/show`}>{hotel.text}</Link>
-        </div>
-      )
-    })
+  render () {
+    if (!this.state.hotels) {
+      return <p>loading...</p>
+    }
+
+    const hotels = this.state.hotels.map(hotel => (
+      <li key={hotel.id}>
+        <Link to={`/hotels/${hotel.id}`}>{hotel.title}</Link>
+      </li>
+    ))
+
     return (
-      <div>
-        <h1>Hotels</h1>
-        {hotels}
-        <Link className='create-link' to='/hotels-create'>Add New Hotel</Link>
-      </div>
+      <React.Fragment>
+        <h4>Hotels:</h4>
+        <ul>
+          {hotels}
+        </ul>
+      </React.Fragment>
     )
   }
 }
 
-export default withRouter(Hotels)
+export default Hotels
