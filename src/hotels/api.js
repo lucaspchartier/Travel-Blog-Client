@@ -8,7 +8,7 @@ export const handleErrors = res => {
   }
 }
 
-export const createHotel = (user, data) => {
+export const createHotel = (user, hotel) => {
   return fetch(apiUrl + '/hotels', {
     method: 'POST',
     headers: {
@@ -17,8 +17,8 @@ export const createHotel = (user, data) => {
     },
     body: JSON.stringify({
       hotel: {
-        name: data.hotel.name,
-        location: data.hotel.location
+        name: hotel.name,
+        location: hotel.location
       }
     })
   })
