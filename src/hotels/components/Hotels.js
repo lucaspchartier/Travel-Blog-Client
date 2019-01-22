@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
+import { handleErrors, getHotels } from '../api'
 import apiUrl from '../../apiConfig'
 
 class Hotels extends Component {
@@ -13,7 +15,7 @@ class Hotels extends Component {
   }
 
   componentDidMount() {
-    fetch(`${apiUrl}/hotels`)
+    getHotels(this.props.user)
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(data => this.setState({ hotels: data.hotels }))
@@ -42,4 +44,4 @@ class Hotels extends Component {
   }
 }
 
-export default Hotels
+export default withRouter(Hotels)
