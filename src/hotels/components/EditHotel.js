@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
 
 import { handleErrors, updateHotel } from '../api'
-import apiUrl from './apiUrl'
+import apiUrl from '../../apiConfig'
 import HotelForm from './HotelForm'
 
 class HotelEdit extends Component {
