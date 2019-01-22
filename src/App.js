@@ -9,7 +9,9 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import Hotels from './hotels/components/Hotels'
+import Hotel from './hotels/components/Hotel'
 import AddHotel from './hotels/components/AddHotel'
+import EditHotel from './hotels/components/EditHotel'
 
 class App extends Component {
   constructor () {
@@ -60,8 +62,14 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/hotels' render={() => (
             <Hotels flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/create-hotel' render={() => (
+          <AuthenticatedRoute user={user} path='/hotels/:id' render={() => (
+            <Hotel flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/add-hotel' render={() => (
             <AddHotel flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/hotels/:id/edit' render={() => (
+            <EditHotel flash={this.flash} user={user} />
           )} />
         </main>
       </React.Fragment>
