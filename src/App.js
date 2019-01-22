@@ -9,6 +9,7 @@ import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
 import Hotels from './hotels/components/Hotels'
+import AddHotel from './hotels/components/AddHotel'
 
 class App extends Component {
   constructor () {
@@ -16,6 +17,7 @@ class App extends Component {
 
     this.state = {
       user: null,
+      data: null,
       flashMessage: '',
       flashType: null
     }
@@ -23,7 +25,7 @@ class App extends Component {
 
   setUser = user => this.setState({ user })
 
-  clearUser = () => this.setState({ user: null })
+  clearUser = () => this.setState({ user: null, data: null })
 
   flash = (message, type) => {
     this.setState({ flashMessage: message, flashType: type })
@@ -57,6 +59,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/hotels' render={() => (
             <Hotels flash={this.flash} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/create-hotel' render={() => (
+            <AddHotel flash={this.flash} user={user} />
           )} />
         </main>
       </React.Fragment>
