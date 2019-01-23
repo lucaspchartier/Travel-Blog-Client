@@ -34,7 +34,7 @@ export const getHotels = user => {
   })
 }
 
-export const showHotel = user => {
+export const showHotel = (user, id) => {
   return fetch(apiUrl + `/hotels/${id}`, {
     method: 'GET',
     headers: {
@@ -44,23 +44,24 @@ export const showHotel = user => {
   })
 }
 
-export const updateHotel = (user, data) => {
+export const updateHotel = (user, hotel, id) => {
+  console.log('This is id', id)
   return fetch(apiUrl + `/hotels/${id}`, {
-    method: 'POST',
+    method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
       'Authorization':`Token token=${user.token}`
     },
     body: JSON.stringify({
       hotel: {
-        name: data.hotel.name,
-        location: data.hotel.location
+        name: hotel.name,
+        location: hotel.location
       }
     })
   })
 }
 
-export const deleteHotel = user => {
+export const deleteHotel = (user, id) => {
   return fetch(apiUrl + `/hotels/${id}`, {
     method: 'DELETE',
     headers: {
