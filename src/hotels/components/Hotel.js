@@ -3,6 +3,7 @@ import { withRouter } from 'react-router'
 import { Link, Redirect } from 'react-router-dom'
 
 import { handleErrors, showHotel, deleteHotel } from '../api'
+import messages from '../messages'
 import apiUrl from '../../apiConfig'
 
 class Hotel extends Component {
@@ -31,12 +32,14 @@ class Hotel extends Component {
       method: 'DELETE'
     }
 
+    const { flash } = this.props
     const id = this.props.match.params.id
 
     deleteHotel(this.props.user, id)
       .then(res => res.ok ? res : new Error())
       .then(() => this.setState({ deleted: true }))
-      .catch(console.error)
+      .then(() => flash(messages.deleteHotelSuccess, 'flash-success'))
+      .catch(() => flash(messages.deleteHotelFailure, 'flash-error'))
   }
 
   render () {
