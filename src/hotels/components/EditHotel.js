@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
 
 import { handleErrors, updateHotel } from '../api'
+import messages from '../messages'
 import apiUrl from '../../apiConfig'
 import HotelForm from './HotelForm'
 
@@ -38,12 +39,14 @@ class HotelEdit extends Component {
   handleSubmit = event => {
     event.preventDefault()
 
+    const { flash } = this.props
     const id = this.props.match.params.id
 
     updateHotel(this.props.user, this.state.hotel, id)
       .then(res => res.ok ? res : new Error())
       .then(data => this.setState({ updated: true }))
-      .catch(console.error)
+      .then(() => flash(messages.updateHotelSuccess, 'flash-success'))
+      .catch(() => flash(messages.updateHotelFailure, 'flash-error'))
   }
 
   render () {
