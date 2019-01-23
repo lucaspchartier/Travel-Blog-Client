@@ -21,7 +21,7 @@ class HotelEdit extends Component {
   componentDidMount () {
     const id = this.props.match.params.id
 
-    updateHotel(this.props.user, this.state.hotel)
+    updateHotel(this.props.user, this.state.hotel, id)
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(data => this.setState({ hotel: data.hotel }))
@@ -29,27 +29,18 @@ class HotelEdit extends Component {
   }
 
   handleChange = event => {
+    this.setState({ hotel: { title: event.target.value, name: '', location: ''} })
+    const updatedField = { [event.target.name]: event.target.value }
     const editedHotel = Object.assign(this.state, updatedField)
     this.setState({ hotel: editedHotel })
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    console.log('submitted form')
-
-    const options = {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        hotel: this.state.hotel
-      })
-    }
 
     const id = this.props.match.params.id
 
-    updateHotel(this.props.user, this.state.hotel)
+    updateHotel(this.props.user, this.state.hotel, id)
       .then(res => res.ok ? res : new Error())
       .then(data => this.setState({ updated: true }))
       .catch(console.error)

@@ -4,6 +4,7 @@ const HotelForm = ({ handleChange, handleSubmit, hotel }) => (
   <form onSubmit={handleSubmit}>
     <label>Name</label>
     <input
+      required
       name="name"
       placeholder="Name of Hotel"
       value={hotel.name}
@@ -12,6 +13,7 @@ const HotelForm = ({ handleChange, handleSubmit, hotel }) => (
 
     <label>Location</label>
     <input
+      required
       name="location"
       placeholder="Hotel Location"
       value={hotel.location}

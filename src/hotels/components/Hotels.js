@@ -42,7 +42,7 @@ class Hotels extends Component {
           {hotels}
         </ul>
         <button>
-          <Link to={'/add-hotel'}>Create</Link>
+          <Link to={'/add-hotel'}>Add Hotel</Link>
         </button>
       </React.Fragment>
     )
