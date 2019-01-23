@@ -49,7 +49,7 @@ class Hotel extends Component {
     } else if (deleted) {
       return (
         <Redirect to={{
-          pathname: '/hotels',
+          pathname: '/',
           state: { message: 'You deleted your hotel!' }
         }} />
       )
