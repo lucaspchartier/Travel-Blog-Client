@@ -52,7 +52,7 @@ class AddHotel extends Component {
   render () {
     const { id } = this.state
     if (id) {
-      return <Redirect to={`/hotels/${id}`} />
+      return <Redirect to={'/hotels'} />
     }
 
     const { name, location } = this.state
