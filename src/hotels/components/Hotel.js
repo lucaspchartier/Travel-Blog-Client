@@ -41,6 +41,7 @@ class Hotel extends Component {
 
   render () {
     const { hotel, notFound, deleted } = this.state
+    const id = this.props.match.params.id
 
     if (notFound) {
       return <Redirect to="/" />
@@ -49,21 +50,21 @@ class Hotel extends Component {
     } else if (deleted) {
       return (
         <Redirect to={{
-          pathname: '/',
+          pathname: '/hotels',
           state: { message: 'You deleted your hotel!' }
         }} />
       )
     }
 
-    const { id, name, location } = hotel
+    const { name, location } = hotel
     return (
       <React.Fragment>
         <p>{this.state.hotel.name}</p>
         <p>{this.state.hotel.location}</p>
         <button>
-          <Link to={`/hotels/${id}/edit`}>Edit</Link>
+          <Link to={`/hotels/${id}/edit`}>Edit Hotel</Link>
         </button>
-        <button onClick={this.destroy}>Delete</button>
+        <button onClick={this.destroy}>Delete Hotel</button>
       </React.Fragment>
     )
   }
