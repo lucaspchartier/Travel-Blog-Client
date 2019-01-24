@@ -41,13 +41,15 @@ class Hotels extends Component {
 
     return (
       <React.Fragment>
-        <h4>Hotels: </h4>
-        <ul>
-          {hotels}
-        </ul>
-        <button>
-          <Link to={'/add-hotel'}>Add Hotel</Link>
-        </button>
+        <div className='hotel-list'>
+          <h4>Hotels: </h4>
+          <ul>
+            {hotels}
+          </ul>
+          <button>
+            <Link to={'/add-hotel'}>Add Hotel</Link>
+          </button>
+        </div>
       </React.Fragment>
     )
   }
