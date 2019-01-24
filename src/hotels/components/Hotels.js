@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
 import { handleErrors, getHotels } from '../api'
+import messages from '../messages'
 import apiUrl from '../../apiConfig'
 
 class Hotels extends Component {
@@ -14,13 +15,15 @@ class Hotels extends Component {
   }
 
   componentDidMount() {
+    const { flash } = this.props
     const id = this.props.match.params.id
 
     getHotels(this.props.user)
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(data => this.setState({ hotels: data.hotels }))
-      .catch(console.error)
+      .then(() => flash(messages.getHotelsSuccess, 'flash-success'))
+      .catch(() => flash(messages.getHotelsFailure, 'flash-error'))
   }
 
   render () {

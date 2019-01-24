@@ -18,13 +18,15 @@ class Hotel extends Component {
   }
 
   componentDidMount () {
+    const { flash } = this.props
     const id = this.props.match.params.id
 
     showHotel(this.props.user, id)
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(data => this.setState({ hotel: data.hotel }))
-      .catch(() => this.setState({ notFound: true }))
+      .then(() => flash(messages.showHotelSuccess, 'flash-success'))
+      .catch(() => flash(messages.showHotelFailure, 'flash-error'))
   }
 
   destroy = () => {
