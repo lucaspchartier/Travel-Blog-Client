@@ -1,11 +1,12 @@
 $charcoal: #bbb;
 
 .main-header {
+  font-family: helvetica, sans-serif;
   align-items: center;
   border-bottom: 1px solid $charcoal;
   display: flex;
   height: 100px;
-  padding: 0 20px;
+  padding: 0 10px;
   background-color: #0a244f;
   color: #42ebf4;
 
