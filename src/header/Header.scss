@@ -1,9 +1,7 @@
-$charcoal: #bbb;
-
 .main-header {
   font-family: helvetica, sans-serif;
   align-items: center;
-  border-bottom: 1px solid $charcoal;
+  border-bottom: 1px solid #42ebf4;
   display: flex;
   height: 100px;
   padding: 0 10px;
@@ -44,7 +42,7 @@ $charcoal: #bbb;
 
     a,
     span {
-      border: 1px solid $charcoal;
+      border: 1px solid #42ebf4;
       margin-bottom: 5px;
       text-align: center;
       width: 80%;
