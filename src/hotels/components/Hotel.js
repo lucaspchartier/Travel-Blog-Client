@@ -65,15 +65,17 @@ class Hotel extends Component {
     const { name, location } = hotel
     return (
       <React.Fragment>
-        <p>{this.state.hotel.name}</p>
-        <p>{this.state.hotel.location}</p>
-        <button>
-          <Link to={'/hotels'}>View All Hotels</Link>
-        </button>
-        <button>
-          <Link to={`/hotels/${id}/edit`}>Edit Hotel</Link>
-        </button>
-        <button onClick={this.destroy}>Delete Hotel</button>
+        <div className='hotel-list'>
+          <p>{this.state.hotel.name}</p>
+          <p>{this.state.hotel.location}</p>
+          <button>
+            <Link to={'/hotels'}>View All Hotels</Link>
+          </button>
+          <button>
+            <Link to={`/hotels/${id}/edit`}>Edit Hotel</Link>
+          </button>
+          <button onClick={this.destroy}>Delete Hotel</button>
+        </div>
       </React.Fragment>
     )
   }
