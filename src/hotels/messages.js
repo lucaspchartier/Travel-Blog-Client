@@ -1,12 +1,12 @@
 export default {
-  createHotelSuccess: 'You successfully added a hotel!',
+  createHotelSuccess: 'You have successfully added a hotel!',
   createHotelFailure: 'Error: Something went wrong. Please try again.',
-  getHotelsSuccess: 'Here are your hotels so far!',
+  getHotelsSuccess: 'Here are the hotels you have so far!',
   getHotelsFailure: 'Error: Something went wrong. Please try again.',
   showHotelSuccess: 'Here\'s your hotel!',
   showHotelFailure: 'Error: Something went wrong. Please try again.',
-  updateHotelSuccess: 'You successfully edited your hotel!',
+  updateHotelSuccess: 'You have successfully edited your hotel!',
   updateHotelFailure: 'Error: Something went wrong. Please try again.',
-  deleteHotelSuccess: 'You successfully deleted your hotel!',
+  deleteHotelSuccess: 'You have successfully deleted your hotel!',
   deleteHotelFailure: 'Error: Something went wrong. Please try again.',
 }
