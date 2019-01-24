@@ -4,7 +4,7 @@ import './HotelForm.scss'
 import messages from '../messages'
 
 const HotelForm = ({ handleChange, handleSubmit, hotel }) => (
-  <form onSubmit={handleSubmit}>
+  <form className='hotel-form' onSubmit={handleSubmit}>
     <label>Name</label>
     <input
       required

@@ -1,0 +1,20 @@
+.hotel-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 15% auto 0;
+  max-width: 600px;
+  color: #0a244f;
+
+  h3,
+  input {
+    margin-bottom: 5%;
+  }
+
+  button {
+    align-self: flex-end;
+    max-width: 200px;
+    background-color: #0a244f;
+    color: #42ebf4;
+  }
+}
