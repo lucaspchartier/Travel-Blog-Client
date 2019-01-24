@@ -1,5 +1,7 @@
 import React from 'react'
 
+import messages from '../messages'
+
 const HotelForm = ({ handleChange, handleSubmit, hotel }) => (
   <form onSubmit={handleSubmit}>
     <label>Name</label>
