@@ -26,7 +26,6 @@ class Hotel extends Component {
       .then(res => res.ok ? res : new Error())
       .then(res => res.json())
       .then(data => this.setState({ hotel: data.hotel }))
-      .then(() => flash(messages.showHotelSuccess, 'flash-success'))
       .catch(() => flash(messages.showHotelFailure, 'flash-error'))
   }
 
