@@ -1,7 +1,7 @@
-$success: #c7f282;
-$warning: #f1e681;
-$error: #f08181;
-$charcoal: #ccc;
+$success: #77ff80;
+$warning: #f9f92c;
+$error: #c91e1e;
+$message-text: #fff;
 
 body {
   background-image: url('./img/bora_bora_beach.jpeg');
@@ -44,7 +44,8 @@ a:active {
 .flash-success,
 .flash-warning,
 .flash-error {
-  border: 1px solid $charcoal;
+  border: 1px solid $message-text;
+  color: $message-text;
   display: block;
   left: 25%;
   padding: 30px;
