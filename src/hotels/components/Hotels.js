@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import './Hotels.scss'
 
 import { handleErrors, getHotels } from '../api'
 import messages from '../messages'
