@@ -25,9 +25,9 @@ class HotelEdit extends Component {
   }
 
   handleChange = event => {
-    this.setState({ hotel: { title: event.target.value, name: '', location: ''} })
-    const updatedField = { [event.target.name]: event.target.value }
-    const editedHotel = Object.assign(this.state, updatedField)
+    const editedHotel = {
+      ...this.state.hotel, [event.target.name]: event.target.value
+    }
     this.setState({ hotel: editedHotel })
   }
 

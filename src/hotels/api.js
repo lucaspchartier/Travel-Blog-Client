@@ -45,7 +45,6 @@ export const showHotel = (user, id) => {
 }
 
 export const updateHotel = (user, hotel, id) => {
-  console.log('This is id', id)
   return fetch(apiUrl + `/hotels/${id}`, {
     method: 'PATCH',
     headers: {
