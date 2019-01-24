@@ -8,6 +8,7 @@ import SignUp from './auth/components/SignUp'
 import SignIn from './auth/components/SignIn'
 import SignOut from './auth/components/SignOut'
 import ChangePassword from './auth/components/ChangePassword'
+
 import Hotels from './hotels/components/Hotels'
 import Hotel from './hotels/components/Hotel'
 import AddHotel from './hotels/components/AddHotel'
@@ -53,22 +54,22 @@ class App extends Component {
           <Route path='/sign-in' render={() => (
             <SignIn flash={this.flash} setUser={this.setUser} />
           )} />
-          <AuthenticatedRoute user={user} path='/sign-out' render={() => (
+          <AuthenticatedRoute user={user} exact path='/sign-out' render={() => (
             <SignOut flash={this.flash} clearUser={this.clearUser} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/change-password' render={() => (
+          <AuthenticatedRoute user={user} exact path='/change-password' render={() => (
             <ChangePassword flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/hotels' render={() => (
+          <AuthenticatedRoute user={user} exact path='/hotels' render={() => (
             <Hotels flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/hotels/:id' render={() => (
+          <AuthenticatedRoute user={user} exact path='/hotels/:id' render={() => (
             <Hotel flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/add-hotel' render={() => (
+          <AuthenticatedRoute user={user} exact path='/add-hotel' render={() => (
             <AddHotel flash={this.flash} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/hotels/:id/edit' render={() => (
+          <AuthenticatedRoute user={user} exact path='/hotels/:id/edit' render={() => (
             <EditHotel flash={this.flash} user={user} />
           )} />
         </main>

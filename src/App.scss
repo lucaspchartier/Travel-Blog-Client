@@ -3,6 +3,21 @@ $warning: #f1e681;
 $error: #f08181;
 $charcoal: #ccc;
 
+body {
+  background-image: url('./img/bora_bora_beach.jpeg');
+  background-size: cover;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  color: #42ebf4;
+}
+
 .flash-success,
 .flash-warning,
 .flash-error {
@@ -35,6 +50,7 @@ $charcoal: #ccc;
   justify-content: center;
   margin: 15% auto 0;
   max-width: 600px;
+  color: #0a244f;
 
   h3,
   input {
@@ -44,5 +60,7 @@ $charcoal: #ccc;
   button {
     align-self: flex-end;
     max-width: 200px;
+    background-color: #0a244f;
+    color: #42ebf4;
   }
 }
