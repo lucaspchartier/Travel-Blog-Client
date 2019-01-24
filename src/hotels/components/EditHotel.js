@@ -22,11 +22,6 @@ class HotelEdit extends Component {
   componentDidMount () {
     const id = this.props.match.params.id
 
-    updateHotel(this.props.user, this.state.hotel, id)
-      .then(res => res.ok ? res : new Error())
-      .then(res => res.json())
-      .then(data => this.setState({ hotel: data.hotel }))
-      .catch(() => this.setState({ notFound: true }))
   }
 
   handleChange = event => {
