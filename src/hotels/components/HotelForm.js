@@ -1,4 +1,5 @@
 import React from 'react'
+import './HotelForm.scss'
 
 import messages from '../messages'
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router'
 import { Link, Redirect } from 'react-router-dom'
+import './Hotel.scss'
 
 import { handleErrors, showHotel, deleteHotel } from '../api'
 import messages from '../messages'
