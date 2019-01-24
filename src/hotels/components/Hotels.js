@@ -35,7 +35,7 @@ class Hotels extends Component {
 
     const hotels = this.state.hotels.map(hotel => (
       <li key={hotel.id}>
-        <Link to={`/hotels/${hotel.id}`}>{hotel.name}</Link>
+        <Link to={`/hotels/${hotel.id}`}>{hotel.name}, {hotel.location}</Link>
       </li>
     ))
 
