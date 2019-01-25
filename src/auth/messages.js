@@ -4,6 +4,6 @@ export default {
   signInSuccess: 'Welcome! It\'s great to see you!',
   signInFailure: 'Error: Something went wrong. Please try again.',
   signOutSuccess: 'Hope to see you again soon!',
-  changePasswordSuccess: 'You successfully changed passwords!',
+  changePasswordSuccess: 'You have successfully changed passwords!',
   changePasswordFailure: 'Error: Something went wrong. Please try again.'
 }
