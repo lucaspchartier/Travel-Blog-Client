@@ -68,7 +68,7 @@ class Hotel extends Component {
           <h2>{this.state.hotel.name}</h2>
           <h2>{this.state.hotel.location}</h2>
           <button>
-            <Link to={'/hotels'}>View All Hotels</Link>
+            <Link to={'/hotels'}>View Hotels</Link>
           </button>
           <button>
             <Link to={`/hotels/${id}/edit`}>Edit Hotel</Link>
