@@ -40,7 +40,7 @@ class Hotels extends Component {
     return (
       <React.Fragment>
         <div className='hotel-list'>
-          <h4>Hotels: </h4>
+          <h2>Hotels: </h2>
           <ul>
             {hotels}
           </ul>
