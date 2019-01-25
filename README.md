@@ -15,7 +15,7 @@ some authentic places that they want to travel to!
 * HTML
 * CSS
 * JavaScript
-* React
+* ReactJS
 
 ### Unsolved problems for future entities
 As of right now, I have not discovered any outstanding and critical bugs that
