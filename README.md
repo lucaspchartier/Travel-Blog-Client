@@ -25,7 +25,7 @@ where a user can have many flights that include an airline, a flight number, a
 departing destination, and an arriving destination. Furthermore, I do want to
 include a Google Maps/Location API within the application so that the location
 of the hotel shows on the user's list of hotels, as well as potentially
-incorporating a 3rd party travel API (i.e. TripAdvisor, Expedia) to include
+incorporating a 3rd party travel API (i.e. TripAdvisor, Kayak, Expedia, etc.) to include
 various airlines for the flight that the user adds to their list.
 
 ### Planning, process, and problem-solving strategies
